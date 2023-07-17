@@ -200,4 +200,4 @@ Here is an example:
 
 ## Summary
 
-LangChain is a powerful framework that allows developers to build applications powered by language models. It enables the interaction between language models and personalized data sources, opening up new possibilities for querying and analyzing data. With its modular components, chains, and agents, LangChain provides customized workflows for specific tasks. The integration of Xorbits Pandas and Numpy agents further enhances data manipulation capabilities. 
+LangChain is a powerful framework that allows developers to build applications powered by language models. It enables the interaction between language models and personalized data sources, opening up new possibilities for querying and analyzing data.
