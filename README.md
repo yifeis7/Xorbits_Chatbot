@@ -1,41 +1,20 @@
 # Use LangChain & Xorbits to Chat with customized data in an intuitive and efficient way.
 
-> Reference: https://voltrondata.com/resources/use-langchain-ibis-chat-with-data-stored-anywhere
+In the ever-evolving world of data processing and manipulation, the need for efficient and scalable data loading tools has become paramount. The LangChain framework, known for its capability of interacting with LLMs, has taken a significant leap in this direction. With the integration of the Xorbits Document Loader, we have transformed its data loading process, making it more efficient, scalable, and versatile.
 
-If you’re a developer interested in AI, you’ve probably heard of [LangChain](https://github.com/hwchase17/langchain). It’s one of the fastest-growing frameworks in the world and currently has almost [55k stars on GitHub](https://github.com/hwchase17/langchain). But what exactly is LangChain, and why should you be using it?
-
-If you’ve ever tried ChatGPT, LLAMA, or LaMDA you’ll know that these Large Language Models (LLMs) offer an impressive amount of general knowledge and can answer a wide range of questions. But what if you want to ask questions about your own data? This is where LangChain comes into play by allowing LLMs to interact with Xorbits document loader.
+The Xorbits Document Loader is a powerful tool designed to parallelize and distribute data loading tasks. It assists LangChain in seamlessly connecting to a variety of data sources, thereby enhancing its loading capabilities and overall performance.
 
 [Xorbits](https://doc.xorbits.io/en/latest/) is an open-source computing framework that makes it easy to scale data science and machine learning workloads — from data loading to preprocessing, tuning, training, and model serving. With its integration with LangChain, Xorbits is able to provide a seamless experience for users who want to ask questions about their own data and get results with human language prompts. This integration allows LLMs to interact with Xorbits document loader, providing users with a comprehensive solution for their data needs. With Xorbits and LangChain, users can leverage the power of LLMs to gain valuable insights from their data in a more intuitive and efficient manner.
-
-## What is LangChain?
-
->According to their website: LangChain is a framework for developing applications powered by language >models. It enables applications that are:
->
->- Data-aware: connect a language model to other sources of data
->- Agentic: allow a language model to interact with its environment
-
-With LangChain, you can link your personal data sources to LLMs such as GPT-4 from OpenAI or LLAMA model from Meta, enabling you to query a complete database of your own data and receive insights from your preferred LLM. LangChain is accessible as a Python or TypeScript package.
-
-## Why Use LangChain?
-
-There are three main value propositions of LangChain: Components, Chains, and Agents. Let’s look at each of these.
-
-![Three Value Propositions of LangChain](https://voltrondata.com/assets/images/resources/2023-07-06/LangChain%20Value%20Propositions.png)
-
-**Components:** These denote abstractions or modules that assist in working with language models. They comprise LLM Wrappers, Prompt Templates, and Indexes for pertinent information retrieval. The modular nature of these components allows for the construction of a system suited to your specific task. These components can be interconnected to form 'chains' for customized workflows.
-
-**Chains:** Chains represent a collection of components organized to perform a particular task. They yield a sequence of modular components (or other chains) amalgamated in a specific manner to achieve a common use case. The LLMChain is a frequently used type of chain that combines a PromptTemplate, a Model, and Guardrails to accept user input, format it as needed, pass it to the model for a response, and then verify and amend (if required) the model output.
-
-**Agents:** An agent is a component equipped with a variety of tools. It can select the appropriate tool based on the user’s input. Agents permit LLMs to interact with their environment in a specific manner. The two primary types of agents are 'Action Agents' and 'Plan-and-Execute Agents.' Action Agents choose an action and execute it step-by-step, working best for smaller tasks. Plan-and-Execute Agents initially formulate a plan of actions, then carry out those actions one at a time, excelling at more complex or lengthy tasks.
-
-The modularity of LangChain is particularly exciting. The ability to switch between models and reuse existing code with the same prompt templates and chains releases users from being tied to a specific LLM brand or figuring out how to work with fundamental models from the ground up. LangChain supports LLMs from OpenAI, Cohere, HuggingFace, and GPT4ALL, among others.
-
-Commercial LLMs have previously been met with hesitation due to privacy concerns. LangChain offers alternatives. It provides the option to select which model to use on your data and when to apply it for a specific task, adding significant value for users. This flexibility is just one of several ways LangChain's composability benefits users."
 
 ## Xorbits Document Loader for Enhanced Data Loading
 
 To further enhance the data loading capabilities of LangChain, the framework now leverages Xorbits Document Loader. This powerful tool enables LangChain to parallelize and distribute the loading of data, making the process even more efficient and scalable. By utilizing Xorbits Document Loader, developers can seamlessly connect LangChain to various data sources and benefit from its advanced loading capabilities.
+
+### Pipeline Overview for Xorbits Document Loader
+
+1. **Initialization Phase**: The loader is instantiated with a Xorbits DataFrame and the designation of the column that encapsulates the page content. During this phase, the system performs a series of checks to ensure the integrity and compatibility of the input. It verifies the type of the input data frame and check necessary dependencies.
+2. **On-Demand Data Retrieval Phase**: This phase is geared towards efficient data management, particularly when dealing with vast datasets. The loader retrieves records from the DataFrame on an as-needed basis, a strategy also known as lazy loading. It constructs Document objects for each dataframe row, encapsulating the page content and the corresponding metadata. The system then yields these Document objects sequentially, thereby ensuring memory efficiency.
+3. **Complete Data Retrieval Phase**: This phase is designed for scenarios where the entire DataFrame needs to be loaded simultaneously. It leverages the mechanism used in the on-demand data retrieval phase but transforms the output into a list, effectively loading the entirety of the data into memory. While this method is more straightforward, it might be less efficient when dealing with extensive datasets due to the high memory demand.
 
 Examples:
 
@@ -200,4 +179,4 @@ Here is an example:
 
 ## Summary
 
-LangChain is a powerful framework that allows developers to build applications powered by language models. It enables the interaction between language models and personalized data sources, opening up new possibilities for querying and analyzing data.
+LangChain is a powerful framework that allows developers to build applications powered by language models. It enables the interaction between language models and personalized data sources, opening up new possibilities for querying and analyzing data. 
